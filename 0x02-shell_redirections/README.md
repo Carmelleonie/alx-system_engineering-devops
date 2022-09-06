@@ -1,1 +1,1 @@
-Display the content of the /etc/passwd file
+Write a script that counts the number of directories and sub-directories in the current directory
