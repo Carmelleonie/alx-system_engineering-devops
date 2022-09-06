@@ -1,1 +1,1 @@
-Replace all characters A and c from input to Z and e respectively
+Write a script that writes into the file ls_cwd_content the result of the command ls -la
