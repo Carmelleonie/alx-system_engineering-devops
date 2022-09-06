@@ -1,1 +1,1 @@
-Write a script that duplicates the last line of the file iacta
+Display the last 10 lines of /etc/passwd
