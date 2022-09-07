@@ -1,2 +1,4 @@
 #!/bin/bash
-"(Ôo)
+echo -n "(Ôo)' | hexdump -C
+
+
