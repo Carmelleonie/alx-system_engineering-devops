@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+This script is displaying Best School using while loop but if n is 9 it displays Hi
+n=1
+while [ $n -le 10 ]
+do
+	if [ $n -eq 9 ]
+	then
+		echo "Hi"
+	else
+		echo "Best School"
+	fi
+	n=$(( n+1 ))
+done
