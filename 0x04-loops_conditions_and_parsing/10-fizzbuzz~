@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#if the number is divided by 3, display Fizz; if number is divided by 5, display Buzz; or both by 3 and 5display FizzBuzz
+for i in {1..100}
+do
+	if [ i % 3 == 0 ]
+	then
+		echo "Fizz"
+	elif [ i % 5 == 0 ]
+	then
+		echo "Buzz"
+	elif [[ i % 3 == 0 ]] && [[ i %5 == 0 ]]
+	then
+		echo "FizzBuzz"
+	else
+		echo "$i"
+	fi
+done
