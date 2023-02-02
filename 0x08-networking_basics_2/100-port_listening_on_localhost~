@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#This is about listening on localhost
+nc -l -k 98
