@@ -1,1 +1,1 @@
-MAC and IP adress
+UDP and TCP
