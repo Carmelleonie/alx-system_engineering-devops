@@ -1,28 +1,20 @@
 #!/usr/bin/env bash
+# installs and configs nginx server
+
 package { 'nginx':
-  ensure   => present,
-  provider => 'apt'
+  ensure => 'installed',
 }
 
-# Index page
-file { '/var/www/html/index.html':
-  ensure  => present,
-  path    => '/var/www/html/index.html',
-  content => 'Hello World!'
+file { 'index.nginx-debian.html':
+  path    => '/var/www/html/index.nginx-debian.html',
+  content => 'Hello World!',
 }
 
-# Redirect to fabulous Rick Astley page
-file_line { 'Rick Astley showtime':
-  ensure => 'present',
-  path   => '/etc/nginx/sites-available/default',
-  after  => 'listen 80 default_server;',
-  line   => '        rewrite ^/redirect_me https://www.youtube.com/watch?v=dQw4w9WgXcQ permanent;'
+exec { 'config':
+  command  => 'sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com/watch?v=QH2-TGUlwu4 permanent;/" /etc/nginx/sites-available/default',
+  provider => 'shell',
 }
-
-service { 'nginx':
-  ensure     => running,
-  enable     => true,
-  hasrestart => true,
-  require    => Package['nginx'],
-  subscribe  => File_line['Rick Astley showtime']
+exec { 'start':
+  command  => 'sudo service nginx restart',
+  provider => 'shell',
 }
