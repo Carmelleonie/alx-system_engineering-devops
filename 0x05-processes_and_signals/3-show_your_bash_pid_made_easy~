@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-#this process is displaying lines containing the bash word
-ps aux | pgrep bash
