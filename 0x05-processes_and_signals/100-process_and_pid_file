@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-touch /var/run/myscript.pid && echo $$ > /var/run/myscript.pid
+touch /var/run/myscript.pid && echo "$$" > /var/run/myscript.pid
 
 while true
 do
